@@ -1,0 +1,31 @@
+<h1>Todo</h1>
+<div class="container">
+<form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" [(ngModel)]="todo.description" 
+    name="description" id="description" required="required" minlength="5"
+    #description="ngModel"
+    [ngClass]="{'highlight-red': description.invalid && (description.dirty || description.touched)}">
+</fieldset>
+<div *ngIf="description.invalid && (description.dirty || description.touched)">
+    <div *ngIf="description.errors?.['required']">description is required.</div>
+    <div *ngIf="description.errors?.['minlength']">Name must be at least 5 characters long.</div>
+  </div>
+<fieldset class="form-group">
+    <label>Description</label>    
+    <input type="date" class="form-control" 
+    [ngModel]="todo.targetDate| date:'yyyy-MM-dd'"  
+    (ngModelChange)="todo.targetDate = $event"
+    name="targetDate" required="required"
+    #targetDate="ngModel"
+    [ngClass]="{'highlight-red': targetDate.invalid && (targetDate.dirty || targetDate.touched)}">
+</fieldset>
+<div *ngIf="targetDate.invalid && (targetDate.dirty || targetDate.touched)">
+    <div *ngIf="targetDate.errors?.['required']">description is required.</div>
+  </div>
+<br>
+    <button type="submit" class="btn btn-success" [disabled]="todoForm.invalid">Save</button>
+</form>
+</div>
+

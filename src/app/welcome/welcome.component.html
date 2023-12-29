@@ -1,0 +1,15 @@
+<div class="container">
+<h1>Welcome {{name}}.Welcome to awesome website!</h1>
+<div>You can manage todos <a routerLink="/todos">here</a></div>
+Click on below for new meesage
+<br>
+<br>
+<button  (click)="handleWelcome()"      class="btn btn-primary">Click me</button>
+<br>
+<br>
+<button  (click)="helloWorldWithParam()" class="btn btn-secondary">Click with param</button>
+<div>
+<em *ngIf="welcomeMessage" style="color: blue;">{{welcomeMessage}}</em>
+<em *ngIf="errorMessage" style="color: red;">{{errorMessage}}</em>
+</div>
+</div>

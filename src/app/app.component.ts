@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todo';
 }
+export const API_URL="http://localhost:8080"

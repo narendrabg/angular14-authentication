@@ -1,0 +1,12 @@
+div[ngModel] {
+    margin-bottom: 10px;
+  }
+  
+  div[ngModel] div {
+    color: red;
+  }
+  
+  .highlight-red {
+    border: 1px solid red;
+  }
+  

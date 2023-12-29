@@ -1,0 +1,11 @@
+<div class="container">
+<small *ngIf="invalidCredentials">{{validationMessage}}</small>
+<div>
+User name: <input type="text" name="userName" [(ngModel)]="userName"/>
+Password: <input type="text" name="password" [(ngModel)]="password"/>
+<!-- <button class="btn btn-primary" (click)=handleLogin()>Login</button> -->
+<!-- <button class="btn btn-primary" (click)=handleBasicAuthLogin()>Login</button> -->
+<button class="btn btn-primary" (click)=handleJWTAuthLogin()>Login</button>
+
+</div>
+</div>
